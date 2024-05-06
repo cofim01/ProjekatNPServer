@@ -19,7 +19,7 @@ public class DBBroker {
     private DBBroker() {
         try {
             Properties p = new Properties();
-            p.load(new FileInputStream("konfiguracijabaze.conf"));
+            p.load(new FileInputStream("src/main/resources/konfiguracijabaze.conf"));
             String url = p.getProperty("url");
             String user = p.getProperty("username");
             String password = p.getProperty("password");
