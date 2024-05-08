@@ -10,10 +10,15 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 
 /**
  *
- * @author MRDAK-PC
+ * @author Filip Mrdak
+ * Predstavlja sistemsku operaciju koja vrsi izmene nad postojecim clanom u bazi podataka. 
+ * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
  */
 public class SOIzmeniClana extends OpstiSO {
 
+    /**
+     * Validacija je uspesna ukoliko je prosledjeni objekat klase clan, i ukoliko ne postoji clan u bazi koji ima isti broj telefona kao prosledjeni objekat. 
+     */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
         if (!(odo instanceof Clan)) {
@@ -32,7 +37,9 @@ public class SOIzmeniClana extends OpstiSO {
             }
         }
     }
-
+    /**
+     * Azurira postojeceg clana u bazi podataka na osnovu objekata koji je prosledjen.
+     */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
         DBBroker.getInstanca().update(odo);
