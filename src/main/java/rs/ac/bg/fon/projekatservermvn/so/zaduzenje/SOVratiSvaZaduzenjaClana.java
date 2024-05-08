@@ -10,19 +10,28 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.Zaduzenje;
 
 /**
  *
- * @author MRDAK-PC
+ * @author Filip Mrdak
+ * Predstavlja sistemsku operaciju koja vraca sva zaduzenja za jednog clana iz baze podataka sortirana u opadajucem redosledu prema datumu zaduzenja. 
+ * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
  */
 public class SOVratiSvaZaduzenjaClana extends OpstiSO {
-
+    /**
+     * Lista svih zaduzenja clana kao ArrayList.
+     */
     private ArrayList<Zaduzenje> lista = new ArrayList<>();
 
+    /**
+     * Validacija je uspesna ukoliko je prosledjeni objekat klase Zaduzenje.
+     */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
         if (!(odo instanceof Zaduzenje)) {
             throw new Exception("Prosledjeni objekat nije instanca klase zaduzenje.");
         }
     }
-
+    /**
+     * Vraca sva zaduzenja clana iz baze podataka i dodaje ih u listu zaduzenja.
+     */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
         ArrayList<OpstiDomenskiObjekat> zaduzenja = DBBroker.getInstanca().selectPoUslovu(odo);
@@ -31,7 +40,10 @@ public class SOVratiSvaZaduzenjaClana extends OpstiSO {
         }
 
     }
-
+    /**
+     * Vraca listu svi zaduzenja zaduzenja clana.
+     * @return - lista svihzaduzenja clana kao ArrayList.
+     */
     public ArrayList<Zaduzenje> getLista() {
         return lista;
     }
