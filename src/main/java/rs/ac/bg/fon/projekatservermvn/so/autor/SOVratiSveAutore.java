@@ -11,7 +11,8 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
  *
  * @author Filip Mrdak
  * Predstavlja sistemsku operaciju koja vraca sve autore iz baze podataka kao listu (ArrayList).
- * Satoji se od metoda validate, execute i metode getLista koja vraca listu autora. 
+ * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
+ * 
  */
 public class SOVratiSveAutore extends OpstiSO {
     
@@ -21,10 +22,7 @@ public class SOVratiSveAutore extends OpstiSO {
     ArrayList<Autor> lista = new ArrayList<>();
     
     /**
-     * Predstavlja proveru uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Autor.
-     * @param odo - prosledjeni objekat nad kojim se vrsi validacija.
-     * @throws Exception - ukoliko prosledjeni objekat nije klase Autor.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -33,10 +31,7 @@ public class SOVratiSveAutore extends OpstiSO {
         }
     }
     /**
-     * Predstavlja izvrsenje sistemske operacije.
-     * Pronalazi sve aautore iz baze podataka i dodaje ih u listu autora.
-     * @param odo - objekat na kojim se vrsi sistemska operacija.
-     * @throws Exception - ukoliko je doslo do greske prilikom izvrsavanja sistemske operacije.
+     * Pronalazi sve autore iz baze podataka i dodaje ih u listu autora.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
