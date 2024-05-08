@@ -10,10 +10,20 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 
 /**
  *
- * @author MRDAK-PC
+ * @author Filip Mrdak
+ * Predstavlja sistemsku operaciju koja dodaje novog clana u bazi podataka.
+ * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
  */
 public class SODodajClana extends OpstiSO {
+    /**
+     * Primerna kljuc novog clana koji je dodat u bazi.
+     */
     private int pk;
+    
+    /**
+     * Validacija je uspesna ukoliko je prosledjeni objekat klase Autor.
+     * 
+     */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
         if (!(odo instanceof Clan)) {
@@ -32,12 +42,18 @@ public class SODodajClana extends OpstiSO {
             }
         }
     }
-
+    /**
+     * Dodaje novog clana u bazi podataka.
+     */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
         pk=DBBroker.getInstanca().insert(odo);
     }
-
+    
+    /**
+     * Vraca primarni kljuc novog clana koji je dodat u bazu podataka.
+     * @return primarni kljuc novog clana kao int.
+     */
     public int getPk() {
         return pk;
     }
