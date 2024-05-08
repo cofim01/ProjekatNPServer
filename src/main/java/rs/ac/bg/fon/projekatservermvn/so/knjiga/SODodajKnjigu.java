@@ -11,12 +11,20 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.PrimerakKnjige;
 
 /**
  *
- * @author MRDAK-PC
+ * @author Filip Mrdak
+ * Predstavlja sistemsku operaciju koja dodaje novu knjigu u bazu podataka. 
+ * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
  */
 public class SODodajKnjigu extends OpstiSO {
-
+    
+    /**
+     * Primarni kljuc nove knjige koja je dodata u bazu.
+     */
     private int pk;
-
+    
+    /**
+     * Validacija je uspesna ukoliko je prosledjeni objekat klase Knjiga i ukoliko prosledjena knjiga ne postoji vec u bazi podataka.
+     */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
         if (!(odo instanceof Knjiga)) {
@@ -35,7 +43,9 @@ public class SODodajKnjigu extends OpstiSO {
             }
         }
     }
-
+    /**
+     * Dodaje novu knjigu u bazu podataka zajedno sa svim njenim primercima.
+     */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
         pk=DBBroker.getInstanca().insert(odo);
@@ -49,7 +59,10 @@ public class SODodajKnjigu extends OpstiSO {
         }
 
     }
-
+    /**
+     * Vraca primerni kljuc nove knjige koja je dodata u bazu.
+     * @return - primerni kljuc nove knjige kao int.
+     */
     public int getPk() {
         return pk;
     }
