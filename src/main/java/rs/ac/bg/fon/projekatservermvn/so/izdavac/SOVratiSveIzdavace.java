@@ -10,19 +10,28 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 
 /**
  *
- * @author MRDAK-PC
+ * @author Filip Mrdak
+ * Predstavlja sistemsku operaciju koja vraca sve izdavace iz baze podataka. 
+ * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
  */
 public class SOVratiSveIzdavace extends OpstiSO {
-
+    
+    /**
+     * Lista svih izdavaca iz baze podataka kao ArrayList.
+     */
     ArrayList<Izdavac> lista = new ArrayList<>();
-
+    /**
+     * Validacija je uspesna ukoliko je prosledjeni objekat klase Izdavac.
+     */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
         if (!(odo instanceof Izdavac)) {
             throw new Exception("Prosledjeni objekat nije instanca klase Izdavac!");
         }
     }
-
+    /**
+     * Vraca sve izdavace iz baze podataka i dodaje ih u listu.
+     */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
         ArrayList<OpstiDomenskiObjekat> izdavaci = DBBroker.getInstanca().select(odo);
@@ -30,7 +39,10 @@ public class SOVratiSveIzdavace extends OpstiSO {
             lista.add((Izdavac) i);
         }
     }
-
+    /**
+     * Vraca listu svih izdavaca iz baze podataka.
+     * @return - lista svih izdavaca kao ArrayList.
+     */
     public ArrayList<Izdavac> getLista() {
         return lista;
     }
