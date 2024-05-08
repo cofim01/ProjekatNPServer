@@ -9,10 +9,10 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.PrimerakKnjige;
 
 
 /**
- *
- * @author Filip Mrdak
  * Predstavlja sistemsku operaciju koja menja podatke za odredjeni primerak knjige u bazi podataka. 
  * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
+ * @author Filip Mrdak
+ * 
  */
 public class SOIzmeniPrimerak extends OpstiSO{
     /**

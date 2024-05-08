@@ -10,10 +10,10 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.PrimerakKnjige;
 
 
 /**
- *
- * @author Filip Mrdak
  * Predstavlja sistemsku operaciju koja vraca sve primerke odredjene knjige iz baze podataka. 
  * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
+ * @author Filip Mrdak
+ * 
  */
 public class SOVratiSvePrimerkeKnjige extends OpstiSO {
     /**

@@ -9,10 +9,10 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.Zanr;
 
 
 /**
- *
- * @author Filip Mrdak
  * Predstavlja sistemsku operaciju koja vraca sve zanrove iz baze podataka. 
  * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
+ * @author Filip Mrdak
+ * 
  */
 public class SOVratiSveZanrove extends OpstiSO {
     /**

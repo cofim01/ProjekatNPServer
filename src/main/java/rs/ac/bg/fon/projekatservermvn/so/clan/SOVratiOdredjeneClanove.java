@@ -11,10 +11,10 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 
 
 /**
- * 
- * @author MRDAK-PC
  * Predstavlja sistemsku operaciju koja vraca odredjene clanove (po uslovu) iz baze podataka. 
  * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
+ * @author MRDAK-PC
+ * 
  */
 public class SOVratiOdredjeneClanove extends OpstiSO {
     /**

@@ -8,10 +8,10 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 
 
 /**
- *
- * @author Filip Mrdak
  * Predstavlja sistemsku operaciju koja vraca sve autore iz baze podataka kao listu (ArrayList).
  * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
+ * @author Filip Mrdak
+ * 
  * 
  */
 public class SOVratiSveAutore extends OpstiSO {

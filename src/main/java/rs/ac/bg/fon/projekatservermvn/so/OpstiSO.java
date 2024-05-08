@@ -6,10 +6,10 @@ import rs.ac.bg.fon.projekatservermvn.db.DBBroker;
 import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 
 /**
- *
- * @author Filip Mrdak
  * Apstraktna klasa koja predstavlja osnovu za sve sistemske operacije.
  * Svaka sistemska operacija se sastoji od validacije i izvrsenja odredjenih akcija nad objektima domenskog modela.
+ * @author Filip Mrdak
+ * 
  */
 public abstract class OpstiSO {
     

@@ -10,10 +10,10 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.Zaduzenje;
 
 
 /**
- *
- * @author Filip Mrdak
  * Predstavlja sistemsku operaciju koja vraca odredjena zaduzenja za jednog clana iz baze podataka sortirana u opadajucem redosledu prema datumu zaduzenja iz baze podataka. 
  * Nasledjuje apstraktnu klasu OpstiSo i implementira metode validate i execute.
+ * @author Filip Mrdak
+ * 
  */
 public class SOVratiOdredjenaZaduzenjaClana extends OpstiSO {
     /**
