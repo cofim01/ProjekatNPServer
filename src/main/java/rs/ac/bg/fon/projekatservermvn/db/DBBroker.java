@@ -15,6 +15,8 @@ public class DBBroker {
 
     private static DBBroker instanca;
     private Connection conection;
+    
+    
 
     private DBBroker() {
         try {
@@ -86,6 +88,10 @@ public class DBBroker {
         Statement st = conection.createStatement();
         st.executeUpdate(upit);
 
+    }
+
+    public static void setInstanca(DBBroker instanca) {
+        DBBroker.instanca = instanca;
     }
     
 
