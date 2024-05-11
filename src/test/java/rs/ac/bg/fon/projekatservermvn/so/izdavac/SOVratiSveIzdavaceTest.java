@@ -55,7 +55,7 @@ public class SOVratiSveIzdavaceTest {
     }
 
     @Test
-    public void testExecute() throws Exception {
+    public void testExecute() {
         ArrayList<OpstiDomenskiObjekat> izdavaci = new ArrayList<>();
         Izdavac i=new Izdavac();
         i.setIzdavacId(5);
@@ -64,12 +64,13 @@ public class SOVratiSveIzdavaceTest {
         try {
             when(dbBrokerMock.select(any(OpstiDomenskiObjekat.class))).thenReturn(izdavaci);
             so.execute(new Izdavac());
+            verify(dbBrokerMock).select(any(OpstiDomenskiObjekat.class)); 
+            verifyNoMoreInteractions(dbBrokerMock);
         } catch (Exception ex) {
             fail("Neocekivana greska prilikom izvrsavanja so.");
         }
         
-        verify(dbBrokerMock).select(any(OpstiDomenskiObjekat.class)); 
-        verifyNoMoreInteractions(dbBrokerMock);
+        
         
         assertEquals(1, so.getLista().size());
         assertEquals(5, so.getLista().get(0).getIzdavacId());

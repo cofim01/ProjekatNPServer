@@ -82,7 +82,7 @@ public class SOIzmeniClanaTest {
 
 
     @Test
-    public void testExecute() throws Exception {
+    public void testExecute(){
         try {
             doNothing().when(dbBrokerMock).update(any(OpstiDomenskiObjekat.class));
             so.execute(new Autor());

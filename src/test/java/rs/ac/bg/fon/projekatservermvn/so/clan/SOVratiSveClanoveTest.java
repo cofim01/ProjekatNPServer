@@ -53,7 +53,7 @@ public class SOVratiSveClanoveTest {
 
 
     @Test
-    public void testExecute() throws Exception {
+    public void testExecute() {
         ArrayList<OpstiDomenskiObjekat> clanovi = new ArrayList<>();
         Clan c = new Clan();
         c.setBrTelefona("0616655333");
@@ -65,12 +65,13 @@ public class SOVratiSveClanoveTest {
         try {
             when(dbBrokerMock.select(any(OpstiDomenskiObjekat.class))).thenReturn(clanovi);
             so.execute(new Clan());
+            verify(dbBrokerMock).select(any(OpstiDomenskiObjekat.class)); 
+            verifyNoMoreInteractions(dbBrokerMock);
         } catch (Exception ex) {
             fail("Neocekivana greska prilikom izvrsavanja so.");
         }
         
-        verify(dbBrokerMock).select(any(OpstiDomenskiObjekat.class)); 
-        verifyNoMoreInteractions(dbBrokerMock);
+        
         
         assertEquals(1, so.getLista().size());
         assertEquals("0616655333", so.getLista().get(0).getBrTelefona());

@@ -74,7 +74,7 @@ public class SODodajClanaTest {
     }
 
     @Test
-    public void testExecute() throws Exception {
+    public void testExecute() {
         try {
             when(dbBrokerMock.insert(any(OpstiDomenskiObjekat.class))).thenReturn(1);
             so.execute(new Autor());

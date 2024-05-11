@@ -50,7 +50,7 @@ public class SOVratiOdredjeneClanoveTest {
     }
     
     @Test
-    public void testExecute() throws Exception {
+    public void testExecute() {
         ArrayList<OpstiDomenskiObjekat> clanovi = new ArrayList<>();
         Clan c = new Clan();
         c.setBrTelefona("0616655333");
