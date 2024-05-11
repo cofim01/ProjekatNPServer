@@ -66,6 +66,7 @@ public class SOVratiOdredjeneClanoveTest {
             fail("Neocekivana greska prilikom izvrsavanja so.");
         }
         
+        assertEquals(1, so.getLista().size());
         assertEquals("0616655333", so.getLista().get(0).getBrTelefona());
         assertEquals(5, so.getLista().get(0).getClanId());
         assertEquals("Filip", so.getLista().get(0).getIme());
