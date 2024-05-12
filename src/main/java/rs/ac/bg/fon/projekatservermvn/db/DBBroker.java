@@ -1,10 +1,11 @@
 package rs.ac.bg.fon.projekatservermvn.db;
 
-
-import java.io.FileInputStream;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import java.io.FileReader;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Properties;
 import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 
 /**
@@ -15,21 +16,19 @@ public class DBBroker {
 
     private static DBBroker instanca;
     private Connection conection;
-    
-    
 
     private DBBroker() {
-        try {
-            Properties p = new Properties();
-            p.load(new FileInputStream("src/main/resources/konfiguracijabaze.conf"));
-            String url = p.getProperty("url");
-            String user = p.getProperty("username");
-            String password = p.getProperty("password");
-            System.out.println(url+" "+user+" "+password);
+        try ( FileReader in = new FileReader("src/main/resources/konfiguracijabaze.json")) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            JsonObject json = gson.fromJson(in, JsonObject.class);
+            String url = json.get("url").getAsString();
+            String user = json.get("username").getAsString();
+            String password = json.get("password").getAsString();
+            System.out.println(url + " " + user + " " + password);
             conection = DriverManager.getConnection(url, user, password);
             conection.setAutoCommit(false);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -52,7 +51,7 @@ public class DBBroker {
         ResultSet rs = st.executeQuery(upit);
         return odo.getLista(rs);
     }
-    
+
     public ArrayList<OpstiDomenskiObjekat> selectPoUslovu(OpstiDomenskiObjekat odo) throws SQLException {
         ArrayList<OpstiDomenskiObjekat> lista = new ArrayList<>();
         String upit = "SELECT * FROM " + odo.getNazivTabele() + " " + odo.getAlijas() + " " + odo.join() + " " + odo.getKriterijum();
@@ -93,6 +92,5 @@ public class DBBroker {
     public static void setInstanca(DBBroker instanca) {
         DBBroker.instanca = instanca;
     }
-    
 
 }
