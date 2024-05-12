@@ -1,6 +1,10 @@
 package forme;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -129,12 +133,16 @@ public class KonfiguracijaKonekcije extends javax.swing.JDialog {
             String imeBaze = txtBaza.getText();
             String korisnik = txtUser.getText();
             String sifra = txtPass.getText();
-            Properties propertie = new Properties();
-            FileOutputStream out = new FileOutputStream("konfiguracijabaze.conf");
-            propertie.setProperty("url", "jdbc:mysql://localhost:3306/" + imeBaze);
-            propertie.setProperty("username", korisnik);
-            propertie.setProperty("password", sifra);
-            propertie.store(out, "Datum poslednje konfiguracije:" + sdf.format(new Date()));
+            FileWriter out=new FileWriter("src/main/resources/konfiguracijabaze.json");
+            JsonObject json=new JsonObject();
+            String url="jdbc:mysql://localhost:3306/" + imeBaze;
+            json.addProperty("url", url);
+            json.addProperty("username", korisnik);
+            json.addProperty("password", sifra);
+            Gson gson=new GsonBuilder().create();
+            out.write(gson.toJson(json));
+            out.close();
+            System.out.println(json);
             JOptionPane.showMessageDialog(this, "Uspesno postavljena konfiguracija");
         } catch (Exception e) {
             e.printStackTrace();
