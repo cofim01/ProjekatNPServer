@@ -76,7 +76,7 @@ public class SODodajKnjiguTest {
     }
 
     @Test
-    public void testExecute() throws Exception {
+    public void testExecute() {
         Knjiga k = new Knjiga();
         k.setNaziv("Neka knjiga");
         PrimerakKnjige pk1 = new PrimerakKnjige();
