@@ -52,7 +52,7 @@ public class SOVratiOdredjeneKnjigeTest {
     }
 
     @Test
-    public void testExecute() throws Exception {
+    public void testExecute(){
         Knjiga k1 = new Knjiga();
         k1.setNaziv("Kum");
         k1.setKnjigaId(6);
