@@ -22,7 +22,11 @@ public class SOVratiOdredjeneKnjige extends OpstiSO {
     ArrayList<Knjiga> lista=new ArrayList<>();
 
      /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila. 
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Knjiga.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Knjiga.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -31,8 +35,12 @@ public class SOVratiOdredjeneKnjige extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Vraca sve knjige iz baze koje ispunjavaju uslov i dodaje ih u listu.
      * Uslov je ispunjen ukoliko ime knjige sadrzi ime prosledjenog objekta.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Knjiga.
+     * @throws Exception - ukoliko dodje do greske prilikom izvrsenja upita nad bazom podataka.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {

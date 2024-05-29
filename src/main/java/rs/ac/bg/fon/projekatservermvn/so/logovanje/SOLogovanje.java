@@ -22,9 +22,11 @@ public class SOLogovanje extends OpstiSO {
     Korisnik korisnik;
     
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Korisnik.
-     * @param odo
-     * @throws Exception 
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Korisnik.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -33,8 +35,12 @@ public class SOLogovanje extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Loguje korisnika na sistem ako postoji prosledjeni korisnik u bazi podataka za datim podacima.
      * Ukoliko postoji korisnik u bazi sa prosledjenim podacima, postavlja sve podatke ulogovanog korisnika.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Korisnik.
+     * @throws Exception - ukoliko dodje do greske prilikom izvrsenja upita nad bazom podataka ili ako korisnik ne postoji.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {

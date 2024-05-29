@@ -17,7 +17,11 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.Zaduzenje;
 public class SOZaduziKnjigu extends OpstiSO {
     
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Zaduzenje.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Zaduzenje.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -26,8 +30,12 @@ public class SOZaduziKnjigu extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Vrsi zaduzivanje odredjenog primerka knjige na osnovu prosledjenog objekta. Zaduzivanje se vrsi tako sto se postavlja datum zaduzenja na trenutni datum.
      * Prilikom zaduzivanja se vrsi izmena primerka knjige u bazi podataka kako bi se oznacilo da je primerak knjige trenutno nedostupan.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Zaduzenje koja sadrzi podatke o primerku knjige.
+     * @throws Exception - ukoliko dodje do greske prilikom zaduzivanja ili izmene primerka knjige u bazi podataka.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
