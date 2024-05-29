@@ -40,7 +40,7 @@ public class SOVratiSveAutore extends OpstiSO {
      * Predstavlja izvrsenje sistemske operacije.
      * Pronalazi sve autore iz baze podataka i dodaje ih u listu autora.
      * 
-     * @param odo - prosledjeni objekat domenskog modela, očekuje se da bude instanca klase koja predstavlja autora.
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase koja predstavlja autora.
      * @throws Exception - ukoliko je doslo do greske prilikom izvrsenja sistemske operacije ili prilikom pristupa bazi podataka.
      */
     @Override
