@@ -21,7 +21,11 @@ public class SODodajClana extends OpstiSO {
     private int pk;
     
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Autor.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Clan.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Clan ili ako vec postoji clan sa istim brojem telefona.
      * 
      */
     @Override
@@ -43,7 +47,12 @@ public class SODodajClana extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Dodaje novog clana u bazi podataka.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Clan.
+     * @throws Exception - ukoliko dodavanje clana u bazu podataka nije uspesno.
+     * 
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
