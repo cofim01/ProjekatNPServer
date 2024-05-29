@@ -21,7 +21,11 @@ public class SOVratiSvaZaduzenjaClana extends OpstiSO {
     private ArrayList<Zaduzenje> lista = new ArrayList<>();
 
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Zaduzenje.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Zaduzenje.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -30,7 +34,11 @@ public class SOVratiSvaZaduzenjaClana extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Vraca sva zaduzenja clana iz baze podataka i dodaje ih u listu zaduzenja.
+     * 
+     *  @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Zaduzenje koja sadrzi podatke o clanu.
+     *  @throws Exception - ukoliko dodje do greske prilikom dohvatanja podataka iz baze podataka.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
