@@ -23,7 +23,11 @@ public class SOVratiSveAutoreKnjige extends OpstiSO {
     ArrayList<KnjigaAutor> lista=new ArrayList<>();
     
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase KnjigaAutor.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase KnjigaAutor.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -32,7 +36,11 @@ public class SOVratiSveAutoreKnjige extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Vraca sve veze izmedju autora i knjige u bazi podataka i dodaje ih u listu.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase KnjigaAutor.
+     * @throws Exception - ukoliko dodje do greske prilikom izvrsenja upita nad bazom podataka.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
