@@ -20,7 +20,11 @@ public class SODodajAutoreKnjige extends OpstiSO {
     private int pk;
     
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase KnjigaAutor.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase KnjigaAutor.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -29,7 +33,11 @@ public class SODodajAutoreKnjige extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Doodaje novog autora za odredjenu knjigu i formira vezu izmedju njih.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Autor.
+     * @throws Exception - ukoliko dodje do greske prilikom upisa u bazu podataka.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
