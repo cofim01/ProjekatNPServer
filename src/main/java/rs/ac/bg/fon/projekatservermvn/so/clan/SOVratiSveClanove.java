@@ -21,7 +21,11 @@ public class SOVratiSveClanove extends OpstiSO {
     ArrayList<Clan> lista = new ArrayList<>();
 
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Clan.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Clan.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -30,7 +34,11 @@ public class SOVratiSveClanove extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Vraca sve clanove biblioteke iz baze podataka i dodaje ih u listu.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da sadrzi uslove pretrage.
+     * @throws Exception - ukoliko dodje do greske prilikom izvrsenja pretrage.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
