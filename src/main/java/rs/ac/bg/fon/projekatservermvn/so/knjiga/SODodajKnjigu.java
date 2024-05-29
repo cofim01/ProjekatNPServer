@@ -1,6 +1,6 @@
 package rs.ac.bg.fon.projekatservermvn.so.knjiga;
 
-
+;
 import java.util.ArrayList;
 import rs.ac.bg.fon.projekatservermvn.db.DBBroker;
 import rs.ac.bg.fon.projekatservermvn.so.OpstiSO;
