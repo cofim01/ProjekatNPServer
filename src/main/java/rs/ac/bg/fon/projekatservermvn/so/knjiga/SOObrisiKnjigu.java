@@ -17,7 +17,11 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 public class SOObrisiKnjigu extends OpstiSO{
     
     /**
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Knjiga.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Knjiga.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -26,7 +30,11 @@ public class SOObrisiKnjigu extends OpstiSO{
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Brise odredjenu knjigu iz baze podataka na osnovu primernog kljuca prosledjenog objekta.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Knjiga.
+     * @throws Exception - ukoliko dodje do greske prilikom brisanja knjige iz baze podataka.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
