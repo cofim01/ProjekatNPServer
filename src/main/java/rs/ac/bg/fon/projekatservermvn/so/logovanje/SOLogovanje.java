@@ -26,7 +26,7 @@ public class SOLogovanje extends OpstiSO {
      * Validacija je uspesna ukoliko je prosledjeni objekat klase Korisnik.
      * 
      * @param odo - prosledjeni objekat za koji se vrsi validacija.
-     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Autor.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Korisnik.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
