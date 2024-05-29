@@ -18,7 +18,11 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.Zaduzenje;
 public class SORazduziKnjigu extends OpstiSO {
     
     /**
-     * Validacija je uspesna ukoliko je prosledjeni objekat klase Zaduzenje,
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
+     * Validacija je uspesna ukoliko je prosledjeni objekat klase Zaduzenje.
+     * 
+     * @param odo - prosledjeni objekat za koji se vrsi validacija.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Zaduzenje.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -28,8 +32,12 @@ public class SORazduziKnjigu extends OpstiSO {
     }
     
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Vrsi razduzivanje odredjenog zaduzenja (prosledjenog). Razduzivanje se vrsi tako sto se postavlja datum razduzenja na trenutni datum.
      * Prilikom razduzivanja se vrsi izmena primerka knjige u bazi podataka kako bi se oznacilo da je primerak knjige ponovo dostupan.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Zaduzenje.
+     * @throws Exception - ukoliko dodje do greske prilikom azuriranja podataka u bazi podataka.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
