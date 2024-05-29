@@ -17,7 +17,11 @@ import rs.ac.bg.fon.projekatzajednickimvn.domen.OpstiDomenskiObjekat;
 public class SOIzmeniClana extends OpstiSO {
 
     /**
-     * Validacija je uspesna ukoliko je prosledjeni objekat klase clan, i ukoliko ne postoji clan u bazi koji ima isti broj telefona kao prosledjeni objekat. 
+     * Vrsi validaciju uslova koji su nephodni kako bi se sistemka operacija izvrsila.
+     * Validacija je uspesna ukoliko je prosledjeni objekat klase clan, i ukoliko ne postoji clan u bazi koji ima isti broj telefona kao prosledjeni objekat.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Clan.
+     * @throws Exception - ukoliko prosledjeni objekat nije instanca klase Clan ili ako vec postoji clan sa istim brojem telefona.
      */
     @Override
     protected void validate(OpstiDomenskiObjekat odo) throws Exception {
@@ -38,7 +42,11 @@ public class SOIzmeniClana extends OpstiSO {
         }
     }
     /**
+     * Predstavlja izvrsenje sistemske operacije.
      * Azurira postojeceg clana u bazi podataka na osnovu objekata koji je prosledjen.
+     * 
+     * @param odo - prosledjeni objekat domenskog modela, ocekuje se da bude instanca klase Clan.
+     * @throws Exception - ukoliko azuriranje clana u bazi podataka nije uspesno.
      */
     @Override
     protected void execute(OpstiDomenskiObjekat odo) throws Exception {
