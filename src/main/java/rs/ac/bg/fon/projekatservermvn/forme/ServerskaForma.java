@@ -1,7 +1,7 @@
 package rs.ac.bg.fon.projekatservermvn.forme;
 
 
-import forme.KonfiguracijaKonekcije;
+import rs.ac.bg.fon.projekatservermvn.forme.KonfiguracijaKonekcije;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;

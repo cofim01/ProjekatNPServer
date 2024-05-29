@@ -1,4 +1,4 @@
-package forme;
+package rs.ac.bg.fon.projekatservermvn.forme;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
